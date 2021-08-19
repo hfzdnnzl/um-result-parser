@@ -9,7 +9,7 @@ library(stringr)
 source('parsing.R')
 
 # Define server function
-shinyServer(function(input, output, session) {
+server = function(input, output) {
   observe({
     req(input$file_input)
     
@@ -81,10 +81,10 @@ shinyServer(function(input, output, session) {
     
   })
   
-  # keep alive
-  output$keepAlive <- renderText({
-    req(input$count)
-    paste("keep alive ", input$count)
-  })
+  # # keep alive
+  # output$keepAlive <- renderText({
+  #   req(input$count)
+  #   paste("keep alive ", input$count)
+  # })
   
-}) # server
+} # server

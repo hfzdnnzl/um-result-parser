@@ -4,7 +4,7 @@ library(shiny)
 library(shinythemes)
 
 # Define UI
-fluidPage(
+ui = fluidPage(
   theme = shinytheme("cerulean"),
   # Page Header
   headerPanel("Universiti Malaya Result Parser"),
@@ -35,23 +35,23 @@ fluidPage(
     tableOutput('table')
   ),
   
-  # keep alive
-  tags$head(
-    HTML(
-      "
-  <script>
-  var socket_timeout_interval
-  var n = 0
-  $(document).on('shiny:connected', function(event) {
-  socket_timeout_interval = setInterval(function(){
-  Shiny.onInputChange('count', n++)
-  }, 30)
-  });
-  $(document).on('shiny:disconnected', function(event) {
-  clearInterval(socket_timeout_interval)
-  });
-  </script>
-  "
-      )),
-  textOutput("keepAlive")
+  # # keep alive
+  # tags$head(
+  #   HTML(
+  #     "
+  # <script>
+  # var socket_timeout_interval
+  # var n = 0
+  # $(document).on('shiny:connected', function(event) {
+  # socket_timeout_interval = setInterval(function(){
+  # Shiny.onInputChange('count', n++)
+  # }, 300)
+  # });
+  # $(document).on('shiny:disconnected', function(event) {
+  # clearInterval(socket_timeout_interval)
+  # });
+  # </script>
+  # "
+  #     )),
+  # textOutput("keepAlive")
 ) # fluidPage
