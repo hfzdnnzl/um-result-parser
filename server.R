@@ -81,4 +81,10 @@ shinyServer(function(input, output, session) {
     
   })
   
+  # keep alive
+  output$keepAlive <- renderText({
+    req(input$count)
+    paste("keep alive ", input$count)
+  })
+  
 }) # server
