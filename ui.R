@@ -1,3 +1,5 @@
+
+# library
 library(shiny)
 library(shinythemes)
 
@@ -43,7 +45,7 @@ fluidPage(
   $(document).on('shiny:connected', function(event) {
   socket_timeout_interval = setInterval(function(){
   Shiny.onInputChange('count', n++)
-  }, 15000)
+  }, 300)
   });
   $(document).on('shiny:disconnected', function(event) {
   clearInterval(socket_timeout_interval)
