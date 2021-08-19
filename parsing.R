@@ -77,6 +77,3 @@ result_parser = function(pdfs_path){
   return(data)
 }
 
-# pdfs_path = paste0('degree results/',list.files('degree results'))
-# results = result_parser(pdfs_path)
-# barplot(results[[3]]$total,names.arg = results[[3]]$grade, col = '#40E0D0', main = 'Total Grades')

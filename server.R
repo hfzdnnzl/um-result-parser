@@ -5,6 +5,9 @@ library(shinythemes)
 library(xlsx)
 library(stringr)
 
+# source scripts
+source('parsing.R')
+
 # Define server function
 shinyServer(function(input, output, session) {
   observe({
